@@ -33,15 +33,19 @@ def pedir_dato():
 mensaje_opcion = "1) Kilometros -> Millas\n2) Kilogramos -> Libras\n3) Celsius -> Fahrenheit\n4) Salir"
 mensaje_dato = "Ahora me vas a pasar la informacion"
 def menu():
-    opcion = validar_dato(mensaje_opcion,'int')
-    dato = validar_dato(mensaje_dato,'float')
-    diccionario = {
-        1:kilometros_millas,
-        2:kilogramos_libras,
-        3:celsius_fahrenheit
-    }
-    dato_final = diccionario[opcion](dato)
-    print(f"El resultado es {dato_final}")
+    while True:
+        opcion = validar_dato(mensaje_opcion,'int')
+        dato = validar_dato(mensaje_dato,'float')
+        diccionario = {
+            1:kilometros_millas,
+            2:kilogramos_libras,
+            3:celsius_fahrenheit
+        }
+        
+        if opcion == 4:
+            break
+        dato_final = diccionario[opcion](dato)
+        print(f"El resultado es {dato_final}")
 
 
 
